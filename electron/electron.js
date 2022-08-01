@@ -1,12 +1,5 @@
 const { exec } = require("child_process");
-const {
-  app,
-  BrowserWindow,
-  ipcMain,
-  Menu,
-  globalShortcut,
-  MessageChannelMain,
-} = require("electron");
+const { app, BrowserWindow, ipcMain, Menu } = require("electron");
 const { join } = require("path");
 const fs = require("fs");
 

@@ -291,7 +291,7 @@ const formatDate = (date) => {
 </script>
 
 <style scoped lang="scss">
-@import "../scss/modules/_table-section.scss";
+@import "../scss/_table-section.scss";
 
 .file-item {
   border: 1px solid black;
