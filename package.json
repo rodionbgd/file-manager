@@ -1,0 +1,49 @@
+{
+  "name": "vue-desktop",
+  "version": "0.0.0",
+  "main": "electron/electron.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "lint:fix": "eslint src --ext .vue,.js,.jsx,.cjs,.mjs,.json --fix --ignore-path .gitignore",
+    "lint": "eslint src --ext .vue,.js,.jsx,.cjs,.mjs,.json --ignore-path .gitignore",
+    "electron": "wait-on tcp:3000 && cross-env IS_DEV=true electron .",
+    "electron:pack": "electron-builder --dir",
+    "electron:dev": "npm run dev && npm run electron",
+    "electron:builder": "electron-builder",
+    "build:for:electron": "cross-env ELECTRON=true vite build",
+    "app:build": "npm run build:for:electron && npm run electron:builder"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "core-js": "^3.8.3",
+    "process": "^0.11.10",
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "concurrently": "^7.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^19.0.3",
+    "electron-builder": "^23.0.3",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "node-sass": "^7.0.1",
+    "prettier": "^2.5.1",
+    "sass": "^1.53.0",
+    "sass-loader": "^13.0.2",
+    "vite": "^2.9.9",
+    "vite-plugin-electron": "^0.4.6",
+    "vite-plugin-require-transform": "^1.0.3",
+    "vite-plugin-resolve": "^2.1.2",
+    "wait-on": "^6.0.1"
+  },
+  "env": {
+    "VITE_DEV_SERVER_HOST": "127.0.0.1",
+    "VITE_DEV_SERVER_PORT": 3345
+  }
+}
